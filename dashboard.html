@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="./style.css?version=20240227">
+    <title>Atul - Dashboard</title>
+</head>
+
+<body>
+    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+        <div class="app-header header-shadow">
+            <div class="app-header__logo">
+                <div class="logo-src"><img src="./images/atullogo.png" alt=""></div>
+                <div class="header__pane ml-auto">
+                    <div>
+                        <button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
+                            data-class="closed-sidebar">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="app-header__mobile-menu">
+                <div>
+                    <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="app-header__menu">
+                <span>
+                    <button type="button"
+                        class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                        <span class="btn-icon-wrapper">
+                            <i class="fa fa-ellipsis-v fa-w-6"></i>
+                        </span>
+                    </button>
+                </span>
+            </div>
+            <div class="app-header__content">
+                <div class="app-header-left">
+                    <!-- <div class="search-wrapper">
+                        <div class="input-holder">
+                            <input type="text" class="search-input" placeholder="Type to search">
+                            <button class="search-icon"><span></span></button>
+                        </div>
+                        <button class="close"></button>
+                    </div> -->
+
+                    <h6>Tonner Tracking System V-1.0.3</h6>
+                </div>
+                <div class="app-header-right">
+                    <div class="header-btn-lg pr-0">
+                        <div class="widget-content p-0">
+                            <div class="widget-content-wrapper">
+                                <div class="widget-content-left ml-3 header-user-info">
+                                    <div class="widget-heading">
+                                        Sumit Singh Rawat
+                                    </div>
+                                    <div class="widget-subheading">
+                                        Frontend Developer (UI)
+                                    </div>
+                                </div>
+                                <div class="widget-content-left">
+                                    <div class="btn-group">
+                                        <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                            class="p-0 btn">
+                                            <i class="fa fa-angle-down ml-2 opacity-8"></i>
+                                        </a>
+                                        <div tabindex="-1" role="menu" aria-hidden="true"
+                                            class="dropdown-menu dropdown-menu-right">
+                                            <button type="button" tabindex="0" class="dropdown-item">User
+                                                Account</button>
+                                            <div tabindex="-1" class="dropdown-divider"></div><a class="dropdown-item"
+                                                href="./index.html">Log out</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="app-main">
+            <div class="app-sidebar sidebar-shadow">
+                <div class="app-header__logo">
+                    <div class="logo-src"><img src="./images/herologo.png" alt=""></div>
+                    <div class="header__pane ml-auto">
+                        <div>
+                            <button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
+                                data-class="closed-sidebar">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-header__mobile-menu">
+                    <div>
+                        <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="app-header__menu">
+                    <span>
+                        <button type="button"
+                            class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                            <span class="btn-icon-wrapper">
+                                <i class="fa fa-ellipsis-v fa-w-6"></i>
+                            </span>
+                        </button>
+                    </span>
+                </div>
+                <div class="scrollbar-sidebar">
+                    <div class="app-sidebar__inner">
+                        <ul class="vertical-nav-menu">
+                            <li>
+                                <a onclick="openCity(event, 'Dashboard')" class="tablinks active">
+                                    <span><i class="fas fa-tachometer-alt"></i> Dashboard</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="openCity(event, 'Master')" class="tablinks">
+                                    <span><i class="far fa-copy"></i> Master</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="openCity(event, 'Transaction')" class="tablinks">
+                                    <span><i class="far fa-credit-card"></i> Transaction</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="openCity(event, 'Reports')" class="tablinks">
+                                    <span><i class="far fa-edit"></i> Reports</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="openCity(event, 'Setting')" class="tablinks">
+                                    <span><i class="fas fa-cogs"></i> Setting</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="openCity(event, 'Plant')" class="tablinks">
+                                    <span><i class="fas fa-plant-wilt"></i> Plant BI-Atul</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="app-main__outer">
+                <div class="app-main__inner">
+                    <div id="Dashboard" class="DashboardSection tabcontent" style="display: block;">
+                        <div class="row m-0">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <h2>Dashboard</h2>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <div class="DashboardDetailsBox">
+                                    <div class="NumbersFlex">
+                                        <span>344</span>
+                                        <img src="./images/TotalTonnerBg.png" alt="">
+                                    </div>
+                                    <h5>Total Tonner</h5>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <div class="DashboardDetailsBox" style="background-color: #0AAA57;">
+                                    <div class="NumbersFlex">
+                                        <span>238</span>
+                                        <img src="./images/TotalTonnerBg.png" alt="">
+                                    </div>
+                                    <h5 style="background-color: #057D3F;">Tonner Available</h5>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <div class="DashboardDetailsBox" style="background-color: #D86300;">
+                                    <div class="NumbersFlex">
+                                        <span>112</span>
+                                        <img src="./images/TotalTonnerBg.png" alt="">
+                                    </div>
+                                    <h5 style="background-color: #A44B00;">Tonner Receiving</h5>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <div class="DashboardDetailsBox" style="background-color: #3ACBE8;">
+                                    <div class="NumbersFlex">
+                                        <span>126</span>
+                                        <img src="./images/TonnerFilled.png" alt="">
+                                    </div>
+                                    <h5 style="background-color: #0293B0;">Tonner Filled</h5>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <div class="DashboardDetailsBox" style="background-color: #F22121;">
+                                    <div class="NumbersFlex">
+                                        <span>344</span>
+                                        <img src="./images/Hydrotest.png" alt="">
+                                    </div>
+                                    <h5 style="background-color: #920101;">Hydro Test</h5>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <div class="DashboardDetailsBox" style="background-color: #340AAA;">
+                                    <div class="NumbersFlex">
+                                        <span>0</span>
+                                        <img src="./images/HydroTestPending.png" alt="">
+                                    </div>
+                                    <h5 style="background-color: #160447;">Hydro Test Pending</h5>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <div class="DashboardDetailsBox" style="background-color: #D8005B;">
+                                    <div class="NumbersFlex">
+                                        <span>656</span>
+                                        <img src="./images/TonnerDispatch.png" alt="">
+                                    </div>
+                                    <h5 style="background-color: #720231;">Tonner Dispatch</h5>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <div class="DashboardDetailsBox" style="background-color: #7CE83A;">
+                                    <div class="NumbersFlex">
+                                        <span>0</span>
+                                        <img src="./images/HydroTestPending.png" alt="">
+                                    </div>
+                                    <h5 style="background-color: #3B8B09;">More Than 2 Months</h5>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <div class="DashboardDetailsBox" style="background-color: #7c5959;">
+                                    <div class="NumbersFlex">
+                                        <span>0</span>
+                                        <img src="./images/HydroTestPending.png" alt="">
+                                    </div>
+                                    <h5 style="background-color: #301818;">Hydro Test Failed</h5>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <div class="DashboardDetailsBox" style="background-color: #005a68;">
+                                    <div class="NumbersFlex">
+                                        <span>87</span>
+                                        <img src="./images/HydroTestPending.png" alt="">
+                                    </div>
+                                    <h5 style="background-color: #012c32;">Client Side Tonners</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <section class="PlantMasterSection">
+                            <div class="row m-0">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <h2>Device Master</h2>
+                                    <form class="PlantMasterBox">
+                                        <div class="form-group">
+                                            <label for="">Device Id <b>*</b></label>
+                                            <input type="text" placeholder="Enter device id">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="">Device Name</label>
+                                            <input type="text" placeholder="Enter device name">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="">Category <b>*</b></label>
+                                            <select name="" id="">
+                                                <option value="">Select category</option>
+                                                <option value="">Category 1</option>
+                                                <option value="">Category 2</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="">Device Status </label>
+                                            <div class="ActivenoActiveBox">
+                                                <input type="checkbox"> Active / Non Active
+                                            </div>
+                                        </div>
+
+                                        <div class="PlantMasterBoxFooter">
+                                            <button style="background: #00A651;">Submit</button>
+                                            <button style="background: #F58220;">Cancel</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="PlantMasterTable">
+                                        <div class="PlantMasterTableHeader">
+                                            <h6>Show
+                                                <select name="" id="">
+                                                    <option value="">0</option>
+                                                    <option value="">1</option>
+                                                    <option value="">2</option>
+                                                </select>
+                                                Entries
+                                            </h6>
+
+                                            <h5>
+                                                <label for="">Search</label>
+                                                <input type="text" placeholder="Enter search">
+                                            </h5>
+                                        </div>
+
+                                        <table>
+                                            <thead>
+                                                <tr style="background:#5c5c5c;color: #fff;">
+                                                    <th></th>
+                                                    <th>Device ID</th>
+                                                    <th>Name Of Device</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>Select</td>
+                                                    <td>D0001</td>
+                                                    <td>TestData</td>
+                                                    <td>True</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Select</td>
+                                                    <td>D0002</td>
+                                                    <td>TestData2</td>
+                                                    <td>True</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Select</td>
+                                                    <td>T123</td>
+                                                    <td>321</td>
+                                                    <td>True</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <div class="PlantMasterTableFooter">
+                                            <h6>Showing 1 to 2 of entries</h6>
+
+                                            <h5>
+                                                Previous <button>1</button> Next
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="PlantMasterSection">
+                            <div class="row m-0">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <h2>Hydro Test</h2>
+                                    <form class="PlantMasterBox">
+                                        <div style="width: 100%;">
+                                            <div class="form-group" style="margin-bottom: 20px;">
+                                                <label for="">Tonner No. </label>
+                                                <input type="text" placeholder="Enter tonner no.">
+                                                <button class="ImportBtn">GET</button>
+                                            </div>
+
+                                            <div class="form-group" style="margin-bottom: 20px;">
+                                                <label for="">Tonner Weight</label>
+                                                <input type="text" placeholder="Enter tonner weight">
+                                            </div>
+
+                                            <div class="form-group" style="margin-bottom: 20px;">
+                                                <label for="">Initial Level L-1</label>
+                                                <input type="text" placeholder="Enter initial level L-1">
+                                            </div>
+
+                                            <div class="form-group" style="margin-bottom: 20px;">
+                                                <label for="">Initial Level L-2</label>
+                                                <input type="text" placeholder="Enter initial level L-2">
+                                            </div>
+
+                                            <div class="form-group" style="margin-bottom: 20px;">
+                                                <label for="">Initial Level L-3</label>
+                                                <input type="text" placeholder="Enter initial level L-3">
+                                            </div>
+
+                                            <div class="form-group" style="margin-bottom: 20px;">
+                                                <label for="">Final Level</label>
+                                                <input type="text" placeholder="Enter final level">
+                                            </div>
+                                        </div>
+
+                                        <div style="width: 100%;">
+                                            <div class="form-group" style="margin-bottom: 20px;">
+                                                <label for="">WT. After HTest</label>
+                                                <input type="text" placeholder="Enter WT. after htest">
+                                            </div>
+
+                                            <div class="form-group" style="margin-bottom: 20px;">
+                                                <label for="">Tare Weight</label>
+                                                <input type="text" placeholder="Enter tare weight">
+                                            </div>
+
+                                            <div class="form-group" style="margin-bottom: 20px;">
+                                                <label for="">Test Pressure</label>
+                                                <input type="text" placeholder="Enter test pressure">
+                                            </div>
+
+                                            <div class="form-group" style="margin-bottom: 20px;">
+                                                <label for="">Remarks</label>
+                                                <textarea name="" id="" class="Enter remarks">Remarks</textarea>
+                                            </div>
+
+                                            <div class="form-group" style="margin-bottom: 20px;">
+                                                <label for="">Reason </label>
+                                                <select name="" id="">
+                                                    <option value="">Select reason</option>
+                                                    <option value="">Reason 1</option>
+                                                    <option value="">Reason 2</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group" style="margin-bottom: 20px;">
+                                                <label for="">Choose Result </label>
+                                                <div class="ActivenoActiveBox">
+                                                    <label for="pass"> <input type="radio" id="pass" value="Pass"
+                                                            name="Result"> Pass</label>
+                                                    <label for="fail"> <input type="radio" id="fail" value="Fail"
+                                                            name="Result"> Fail</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="PlantMasterBoxFooter">
+                                                <button style="background: #00A651;">Confirm</button>
+                                                <!-- <button style="background: #F58220;">Cancel</button> -->
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="PlantMasterTable">
+                                        <div class="PlantMasterTableHeader">
+                                            <h6>Show
+                                                <select name="" id="">
+                                                    <option value="">0</option>
+                                                    <option value="">1</option>
+                                                    <option value="">2</option>
+                                                </select>
+                                                Entries
+                                            </h6>
+
+                                            <h5>
+                                                <label for="">Search</label>
+                                                <input type="text" placeholder="Enter search">
+                                            </h5>
+                                        </div>
+
+                                        <table>
+                                            <thead>
+                                                <tr style="background:#5c5c5c;color: #fff;">
+                                                    <th>ID</th>
+                                                    <th>Hydra Test Date</th>
+                                                    <th>Tonner No.</th>
+                                                    <th>Tonner Status</th>
+                                                    <th>Expiry Date</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>21/06/2023</td>
+                                                    <td>BI1890609</td>
+                                                    <td>Pass</td>
+                                                    <td>21/06/2025</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>21/06/2023</td>
+                                                    <td>BI1890609</td>
+                                                    <td>Pass</td>
+                                                    <td>21/06/2025</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>21/06/2023</td>
+                                                    <td>BI1890609</td>
+                                                    <td>Pass</td>
+                                                    <td>21/06/2025</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <div class="PlantMasterTableFooter">
+                                            <h6>Showing 1 to 2 of entries</h6>
+
+                                            <h5>
+                                                Previous <button>1</button> Next
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="PlantMasterSection">
+                            <div class="row m-0">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <h2>Machine Master</h2>
+                                    <form class="PlantMasterBox">
+                                        <div class="form-group">
+                                            <label for="">Machine No. <b>*</b></label>
+                                            <input type="text" placeholder="Enter machine no.">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="">Machine Name <b>*</b></label>
+                                            <input type="text" placeholder="Enter machine name">
+                                        </div>
+
+                                        <div class="PlantMasterBoxFooter">
+                                            <button style="background: #00A651;">Submit</button>
+                                            <button style="background: #F58220;">Cancel</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="PlantMasterTable">
+                                        <div class="PlantMasterTableHeader">
+                                            <h6>Show
+                                                <select name="" id="">
+                                                    <option value="">0</option>
+                                                    <option value="">1</option>
+                                                    <option value="">2</option>
+                                                </select>
+                                                Entries
+                                            </h6>
+
+                                            <h5>
+                                                <label for="">Search</label>
+                                                <input type="text" placeholder="Enter search">
+                                            </h5>
+                                        </div>
+
+                                        <table>
+                                            <thead>
+                                                <tr style="background:#5c5c5c;color: #fff;">
+                                                    <th></th>
+                                                    <th>ID</th>
+                                                    <th>Machine No</th>
+                                                    <th>Machine Name</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>Select</td>
+                                                    <td>7</td>
+                                                    <td>M0010</td>
+                                                    <td>testdata</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Select</td>
+                                                    <td>9</td>
+                                                    <td>M00101</td>
+                                                    <td>testdata</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <div class="PlantMasterTableFooter">
+                                            <h6>Showing 1 to 2 of entries</h6>
+
+                                            <h5>
+                                                Previous <button>1</button> Next
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="PlantMasterSection">
+                            <div class="row m-0">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <h2>Plant Master</h2>
+                                    <form class="PlantMasterBox">
+                                        <div class="form-group">
+                                            <label for="">Plant Code <b>*</b></label>
+                                            <input type="text" placeholder="Enter plant code">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="">Name <b>*</b></label>
+                                            <input type="text" placeholder="Enter name">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="">Address</label>
+                                            <textarea name="" id="" placeholder="Enter address"></textarea>
+                                        </div>
+
+                                        <div class="PlantMasterBoxFooter">
+                                            <button style="background: #00A651;">Submit</button>
+                                            <button style="background: #F58220;">Cancel</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="PlantMasterTable">
+                                        <div class="PlantMasterTableHeader">
+                                            <h6>Show
+                                                <select name="" id="">
+                                                    <option value="">0</option>
+                                                    <option value="">1</option>
+                                                    <option value="">2</option>
+                                                </select>
+                                                Entries
+                                            </h6>
+
+                                            <h5>
+                                                <label for="">Search</label>
+                                                <input type="text" placeholder="Enter search">
+                                            </h5>
+                                        </div>
+
+                                        <table>
+                                            <thead>
+                                                <tr style="background:#5c5c5c;color: #fff;">
+                                                    <th></th>
+                                                    <th>ID</th>
+                                                    <th>Plant Code</th>
+                                                    <th>Plant Name</th>
+                                                    <th>Address</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>Select</td>
+                                                    <td>3</td>
+                                                    <td>BI-APL</td>
+                                                    <td>BI-APL</td>
+                                                    <td>New Warehouse Test</td>
+                                                    <td>Active</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Select</td>
+                                                    <td>4</td>
+                                                    <td>BI-Atul</td>
+                                                    <td>BI-Atul</td>
+                                                    <td>125 TPD</td>
+                                                    <td>Active</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <div class="PlantMasterTableFooter">
+                                            <h6>Showing 1 to 2 of entries</h6>
+
+                                            <h5>
+                                                Previous <button>1</button> Next
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="PlantMasterSection">
+                            <div class="row m-0">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <h2>Tonner Master</h2>
+                                    <form action="">
+                                        <div class="PlantMasterBox">
+                                            <div style="width: 100%;">
+                                                <div class="form-group" style="margin-bottom: 20px;">
+                                                    <label for="">Choose File</label>
+                                                    <input type="file">
+                                                    <button class="ImportBtn">Import</button>
+                                                </div>
+
+                                                <div class="form-group" style="margin-bottom: 20px;">
+                                                    <label for="">Tag / Tonner No. <b>*</b></label>
+                                                    <input type="text" placeholder="Enter tag/tonner no.">
+                                                </div>
+
+                                                <div class="form-group" style="margin-bottom: 20px;">
+                                                    <label for="">Name</label>
+                                                    <input type="text" placeholder="Enter name">
+                                                </div>
+                                            </div>
+
+                                            <div style="width: 100%;">
+                                                <div class="form-group" style="margin-bottom: 20px;">
+                                                    <label for="">Cylinder Capacity <b>*</b></label>
+                                                    <input type="text" placeholder="Enter cylinder capacity">
+                                                </div>
+
+                                                <div class="form-group" style="margin-bottom: 20px;">
+                                                    <label for="">Description</label>
+                                                    <textarea name="" id="" placeholder="Enter description"></textarea>
+                                                </div>
+
+                                                <div class="form-group" style="margin-bottom: 20px;">
+                                                    <label for="">Tonner Status </label>
+                                                    <div class="ActivenoActiveBox">
+                                                        <input type="checkbox"> Active / Non Active
+                                                    </div>
+                                                </div>
+
+                                                <div class="PlantMasterBoxFooter">
+                                                    <button style="background: #00A651;">Submit</button>
+                                                    <!-- <button style="background: #F58220;">Cancel</button> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="PlantMasterTable">
+                                        <div class="PlantMasterExportBtn">
+                                            <button>Export To Excel</button>
+                                        </div>
+                                        <div class="PlantMasterTableHeader">
+                                            <h6>Show
+                                                <select name="" id="">
+                                                    <option value="">0</option>
+                                                    <option value="">1</option>
+                                                    <option value="">2</option>
+                                                </select>
+                                                Entries
+                                            </h6>
+
+                                            <h5>
+                                                <label for="">Search</label>
+                                                <input type="text" placeholder="Enter search">
+                                            </h5>
+                                        </div>
+
+                                        <table>
+                                            <thead>
+                                                <tr style="background:#5c5c5c;color: #fff;">
+                                                    <th></th>
+                                                    <th>ID</th>
+                                                    <th>Tonner No</th>
+                                                    <th>Description</th>
+                                                    <th>Status</th>
+                                                    <th>Created On</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>Delete</td>
+                                                    <td>1</td>
+                                                    <td>BI1890609</td>
+                                                    <td>300 TPD</td>
+                                                    <td>Active</td>
+                                                    <td>20/01/2024</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <div class="PlantMasterTableFooter">
+                                            <h6>Showing 1 to 2 of entries</h6>
+
+                                            <h5>
+                                                Previous <button>1</button> Next
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="PlantMasterSection">
+                            <div class="row m-0">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <h2>Receiving</h2>
+                                    <form class="PlantMasterBox">
+                                        <div style="width: 100%;">
+                                            <div class="form-group" style="margin-bottom: 20px;">
+                                                <label for="">Tonner No. <b>*</b> </label>
+                                                <input type="text" placeholder="Enter tonner no.">
+                                                <button class="ImportBtn">GET</button>
+                                            </div>
+
+                                            <div class="form-group" style="margin-bottom: 20px;">
+                                                <label for="">Customer Name</label>
+                                                <input type="text" placeholder="Enter customer name">
+                                            </div>
+
+                                            <div class="form-group" style="margin-bottom: 20px;">
+                                                <label for="">DC No.</label>
+                                                <input type="text" placeholder="Enter dc no">
+                                            </div>
+                                        </div>
+
+                                        <div style="width: 100%;">
+
+                                            <div class="form-group" style="margin-bottom: 20px;">
+                                                <label for=""
+                                                    style="font-size: 16px;text-align: center;margin-bottom: 10px;">Receiving
+                                                    Status / Condition</label>
+                                                <label for="" style="font-size: 14px;color: #585858;">Bonnet Cap</label>
+                                                <div class="ReceivingConditionFlex">
+                                                    <div>
+                                                        <label for="" style="color: #00a651;">Receiving </label>
+                                                        <select name="" id="">
+                                                            <option value="">Select receiving</option>
+                                                            <option value="">Receiving 1</option>
+                                                            <option value="">Receiving 2</option>
+                                                        </select>
+                                                    </div>
+                                                    <div>
+                                                        <label for="" style="color: #F58220;">Condition </label>
+                                                        <select name="" id="">
+                                                            <option value="">Select condition</option>
+                                                            <option value="">Condition 1</option>
+                                                            <option value="">Condition 2</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group" style="margin-bottom: 20px;">
+                                                <label for="" style="font-size: 14px;color: #585858;">Valve Cap</label>
+                                                <div class="ReceivingConditionFlex">
+                                                    <div>
+                                                        <label for="" style="color: #00a651;">Receiving </label>
+                                                        <select name="" id="">
+                                                            <option value="">Select receiving</option>
+                                                            <option value="">Receiving 1</option>
+                                                            <option value="">Receiving 2</option>
+                                                        </select>
+                                                    </div>
+                                                    <div>
+                                                        <label for="" style="color: #F58220;">Condition </label>
+                                                        <select name="" id="">
+                                                            <option value="">Select condition</option>
+                                                            <option value="">Condition 1</option>
+                                                            <option value="">Condition 2</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="PlantMasterBoxFooter">
+                                                <button style="background: #00A651;">Submit</button>
+                                                <!-- <button style="background: #F58220;">Cancel</button> -->
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="PlantMasterTable">
+                                        <div class="PlantMasterTableHeader">
+                                            <h6>Show
+                                                <select name="" id="">
+                                                    <option value="">0</option>
+                                                    <option value="">1</option>
+                                                    <option value="">2</option>
+                                                </select>
+                                                Entries
+                                            </h6>
+
+                                            <h5>
+                                                <label for="">Search</label>
+                                                <input type="text" placeholder="Enter search">
+                                            </h5>
+                                        </div>
+
+                                        <table>
+                                            <thead>
+                                                <tr style="background:#5c5c5c;color: #fff;">
+                                                    <th>Tonner No.</th>
+                                                    <th>Bonnet Cap Received</th>
+                                                    <th>Condition</th>
+                                                    <th>Valve Cap Received</th>
+                                                    <th>Condition</th>
+                                                    <th>Tonner Status</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>BI1863825</td>
+                                                    <td>Yes</td>
+                                                    <td>Ok</td>
+                                                    <td>Yes</td>
+                                                    <td>Ok</td>
+                                                    <td>Dispatched</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <div class="PlantMasterTableFooter">
+                                            <h6>Showing 1 to 2 of entries</h6>
+
+                                            <h5>
+                                                Previous <button>1</button> Next
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="PlantMasterSection">
+                            <div class="row m-0">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <h2>Filling</h2>
+                                    <form class="PlantMasterBox">
+                                        <div class="form-group" style="margin-bottom: 20px;">
+                                            <label for="">Tonner No. <b>*</b> </label>
+                                            <input type="text" placeholder="Enter tonner no.">
+                                        </div>
+
+                                        <div class="form-group" style="margin-bottom: 20px;">
+                                            <label for="">Machine No. </label>
+                                            <select name="" id="">
+                                                <option value="">Select machine</option>
+                                                <option value="">Machine 1</option>
+                                                <option value="">Machine 2</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group" style="margin-bottom: 20px;">
+                                            <label for="">Tonner Weight</label>
+                                            <input type="text" placeholder="Enter tonner weight">
+                                        </div>
+
+                                        <div class="PlantMasterBoxFooter">
+                                            <button style="background: #00A651;">Submit</button>
+                                            <!-- <button style="background: #F58220;">Cancel</button> -->
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="PlantMasterTable">
+                                        <div class="PlantMasterTableHeader">
+                                            <h6>Show
+                                                <select name="" id="">
+                                                    <option value="">0</option>
+                                                    <option value="">1</option>
+                                                    <option value="">2</option>
+                                                </select>
+                                                Entries
+                                            </h6>
+
+                                            <h5>
+                                                <label for="">Search</label>
+                                                <input type="text" placeholder="Enter search">
+                                            </h5>
+                                        </div>
+
+                                        <table>
+                                            <thead>
+                                                <tr style="background:#5c5c5c;color: #fff;">
+                                                    <th>Tonner No.</th>
+                                                    <th>Machine No.</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>BI1863825</td>
+                                                    <td>FP-5</td>
+                                                    <td>Dispatched</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>BI1863825</td>
+                                                    <td>F4</td>
+                                                    <td>Dispatched</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>BI1863830</td>
+                                                    <td>FP1</td>
+                                                    <td>Dispatched</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <div class="PlantMasterTableFooter">
+                                            <h6>Showing 1 to 2 of entries</h6>
+
+                                            <h5>
+                                                Previous <button>1</button> Next
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="PlantMasterSection">
+                            <div class="row m-0">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <h2>Dispatch</h2>
+                                    <form class="PlantMasterBox">
+                                        <div class="form-group" style="margin-bottom: 0px;">
+                                            <label for="">Shipment No. <b>*</b> </label>
+                                            <input type="text" placeholder="Enter shipment no.">
+                                            <button class="ImportBtn">GET</button>
+                                        </div>
+
+                                        <div class="form-group" style="margin-bottom: 0px;">
+                                            <label for="">Vehicle Number <b>*</b></label>
+                                            <input type="text" placeholder="Enter vehicle number">
+                                        </div>
+
+                                        <div class="form-group" style="margin-bottom: 0px;">
+                                            <label for="">Quantity <b>*</b></label>
+                                            <input type="text" placeholder="Enter quantity">
+                                        </div>
+
+                                        <div class="form-group" style="margin-bottom: 0px;">
+                                            <label for="">Weight</label>
+                                            <input type="text" placeholder="Enter weight">
+                                        </div>
+
+                                        <div class="form-group" style="margin-bottom: 0px;">
+                                            <label for="">Customer Name</label>
+                                            <input type="text" placeholder="Enter customer name">
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="PlantMasterTable">
+                                        <div class="PlantMasterTableHeader">
+                                            <h6>Tonner Details</h6>
+                                        </div>
+
+                                        <table>
+                                            <thead>
+                                                <tr style="background:#5c5c5c;color: #fff;">
+                                                    <th></th>
+                                                    <th>S.No.</th>
+                                                    <th>Tonner Number</th>
+                                                    <th>Customer Name</th>
+                                                    <th>Shipment No.</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>Delete</td>
+                                                    <td>1</td>
+                                                    <td><input type="text" placeholder="Enter tonner number"></td>
+                                                    <td>1</td>
+                                                    <td>1</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <div class="PlantMasterTableFooter">
+                                            <h6></h6>
+
+                                            <h5>
+                                                <button class="AddTonnerBtn">Add Tonner</button>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                                    <button class="SubmitBtn">Submit</button>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="PlantMasterSection">
+                            <div class="row m-0">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <h2>Tonner Status</h2>
+                                    <form class="PlantMasterBox">
+                                        <div class="form-group" style="margin-bottom: 0px;">
+                                            <label for="">Tonner Number <b>*</b> </label>
+                                            <input type="text" placeholder="Enter shipment no.">
+                                            <button class="ImportBtn">GET</button>
+                                        </div>
+
+                                        <div class="form-group" style="margin-bottom: 0px;">
+                                            <label for="">Vehicle Number <b>*</b></label>
+                                            <input type="text" placeholder="Enter vehicle number">
+                                        </div>
+
+                                        <div class="form-group" style="margin-bottom: 0px;">
+                                            <label for="">Quantity <b>*</b></label>
+                                            <input type="text" placeholder="Enter quantity">
+                                        </div>
+
+                                        <div class="form-group" style="margin-bottom: 0px;">
+                                            <label for="">Weight</label>
+                                            <input type="text" placeholder="Enter weight">
+                                        </div>
+
+                                        <div class="form-group" style="margin-bottom: 0px;">
+                                            <label for="">Customer Name</label>
+                                            <input type="text" placeholder="Enter customer name">
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="PlantMasterTable">
+                                        <div class="PlantMasterTableHeader">
+                                            <h6>Tonner Details</h6>
+                                        </div>
+
+                                        <table>
+                                            <thead>
+                                                <tr style="background:#5c5c5c;color: #fff;">
+                                                    <th></th>
+                                                    <th>S.No.</th>
+                                                    <th>Tonner Number</th>
+                                                    <th>Customer Name</th>
+                                                    <th>Shipment No.</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>Delete</td>
+                                                    <td>1</td>
+                                                    <td><input type="text" placeholder="Enter tonner number"></td>
+                                                    <td>1</td>
+                                                    <td>1</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <div class="PlantMasterTableFooter">
+                                            <h6></h6>
+
+                                            <h5>
+                                                <button class="AddTonnerBtn">Add Tonner</button>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                                    <button class="SubmitBtn">Submit</button>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+
+                    <div id="UserMasters" class="DashboardSection tabcontent">
+                        <h2>User Masters</h2>
+                    </div>
+
+                    <div id="VehicleMasters" class="DashboardSection tabcontent">
+                        <h2>Vehicle Masters</h2>
+                    </div>
+
+                    <div id="ZoneMasters" class="DashboardSection tabcontent">
+                        <h2>Zone Masters</h2>
+                    </div>
+
+                    <div id="RFIDMasters" class="DashboardSection tabcontent">
+                        <h2>RFID Masters</h2>
+                    </div>
+
+                    <div id="PutAway" class="DashboardSection tabcontent">
+                        <h2>Put Away</h2>
+                    </div>
+
+                    <div id="Picking" class="DashboardSection tabcontent">
+                        <h2>Picking</h2>
+                    </div>
+
+                    <div id="InternalTransfer" class="DashboardSection tabcontent">
+                        <h2>Internal Transfer</h2>
+                    </div>
+
+                    <div id="VehicleSearch" class="DashboardSection tabcontent">
+                        <h2>Vehicle Search</h2>
+                    </div>
+
+                    <div id="Reports" class="DashboardSection tabcontent">
+                        <h2>Reports</h2>
+                    </div>
+                </div>
+                <!-- <div class="app-wrapper-footer FooterSection">
+                    <div class="app-footer">
+                        <div class="app-footer__inner">
+                            <div class="app-footer-left">
+                                <img src="./images/maxlogo.png" alt="">
+                            </div>
+                            <div class="app-footer-right">
+                                <h6>v1.0.0</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/main.js"></script>
+
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+
+</html>
+
+
+</body>
+
+</html>
